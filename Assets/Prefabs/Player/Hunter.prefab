@@ -83,6 +83,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: ad58c05fe68fa9d4ba41468d749efb11, type: 2}
   directionLook: {x: 0, y: 0}
   inputAutoActive: 0
+  isInteracting: 0
   _Body: {fileID: 5083274788556033362}
   _Animator: {fileID: 4860919375072656064}
   _targetCamera: {fileID: 5014364779174252360}
@@ -91,6 +92,10 @@ MonoBehaviour:
   _equipment1: {fileID: 0}
   _equipment2: {fileID: 0}
   _rotationScream: {fileID: 0}
+  directionScript: {fileID: 0}
+  player_Animator: {fileID: 0}
+  vivoxAudio: {fileID: 0}
+  _reviveObj: {fileID: 0}
   weapon: {fileID: 11400000, guid: 33a7d1fb9ba12a541b2644d66a2aaae6, type: 2}
   stateMachine:
     currentState: 0
@@ -946,6 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1287b60b4c4c94cafac172d8945445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_Animator: {fileID: 0}
 --- !u!114 &3811475238906001762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,6 +1014,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 2586729399586778145}
   isActif: 0
+  toggleMute: 0
+  forcedMute: 0
+  vivoxManager: {fileID: 0}
+  audioToggleMute:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  vocToggle: {fileID: 0}
 --- !u!1 &4588989074849487982
 GameObject:
   m_ObjectHideFlags: 0

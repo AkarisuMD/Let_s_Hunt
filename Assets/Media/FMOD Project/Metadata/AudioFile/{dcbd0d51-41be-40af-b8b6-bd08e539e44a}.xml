@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dcbd0d51-41be-40af-b8b6-bd08e539e44a}">
+		<property name="assetPath">
+			<value>World/Grounded_Drop-14897.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3440000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{37887119-cf52-46f1-b147-067968bbf422}</destination>
+		</relationship>
+	</object>
+</objects>

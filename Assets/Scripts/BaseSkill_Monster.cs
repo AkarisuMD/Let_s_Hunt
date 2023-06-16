@@ -38,7 +38,7 @@ public class BaseCompetance_Monster : MonoBehaviour
     //========
     private void Update()
     {
-        if(!isAttacking) SetDirectionMouse();
+        //if(!isAttacking) SetDirectionMouse();
         if (isSkillOnCooldown)
         {
             SkillRecharge();

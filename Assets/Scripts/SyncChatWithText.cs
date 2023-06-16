@@ -18,6 +18,9 @@ public class SyncChatWithText : MonoBehaviour
     [SerializeField] private int messageLenghtLimit = 12;
 
     [SerializeField] private int messageLimit = 12;
+
+    [SerializeField] private bool popUp;
+    [SerializeField] private MessagePosition popUpPosition;
     //========
     //FONCTIONS
     //========
@@ -32,6 +35,11 @@ public class SyncChatWithText : MonoBehaviour
         chatText.text = RemoveTheFirstLineOfString(chatText.text.ToString());
 
         chatText.text += "\r\n" + user.Substring(0, userLength) + ": " + message.Substring(0, messageLength);
+
+        if(popUp)
+        {
+            UI_Message_Manager.Instance.ShowMessage(Color.green, message.Substring(0, messageLength), null, popUpPosition);
+        }
     }
     private string RemoveTheFirstLineOfString(string text)
     {

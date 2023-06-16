@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Multiplayer;
+using Unity.Collections;
 using UnityEngine.UI;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -26,10 +27,11 @@ public class JoinGame_Manager : NetworkBehaviour
 
     [Header("Script Ref")]
     [SerializeField] private Testing_Relay relayScript;
+    public List<GameObject> vivoxObject = new();
 
     [Header("Network Variable")]
-    [SerializeField] private NetworkVariable<bool> isTheGameStarted = new NetworkVariable<bool>(false);
-    //public NetworkVariable<string> joinCode = new NetworkVariable<string>("");
+    public NetworkVariable<bool> isTheGameStarted = new NetworkVariable<bool>(false);
+    public NetworkVariable<FixedString32Bytes> joinCode = new NetworkVariable<FixedString32Bytes>("");
 
     //========
     //MONOBEHAVIOUR
@@ -195,6 +197,8 @@ public class JoinGame_Manager : NetworkBehaviour
     }
     private void SetJoinCode()
     {
-        joinCodeText.text = relayScript.GetJoinCode();
+        string currentJoinCode = relayScript.GetJoinCode();
+        joinCodeText.text = currentJoinCode;
+        joinCode.Value = currentJoinCode;
     }
 }

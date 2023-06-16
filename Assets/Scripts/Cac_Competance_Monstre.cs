@@ -5,19 +5,15 @@ using UnityEngine;
 
 public class Cac_Competance_Monstre : BaseCompetance_Monster
 {
-    [SerializeField] private new GameObject collider;
-    [SerializeField] private ParticleSystem cac_particule;
+    [SerializeField] private Animator animator;
 
     protected override async void SkillFonction()
     {
         isAttacking = true;
-        cac_particule.Play();
-
-        collider.SetActive(true);
+        animator.SetTrigger("OnAttack");
 
         await Task.Delay(timeOfTheAttack);
 
-        collider.SetActive(false);
         isAttacking = false;
     }
 }

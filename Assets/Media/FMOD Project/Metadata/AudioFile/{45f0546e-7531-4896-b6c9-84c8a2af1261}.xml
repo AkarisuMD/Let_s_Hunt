@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{45f0546e-7531-4896-b6c9-84c8a2af1261}">
+		<property name="assetPath">
+			<value>World/owl_hooting_000102_0145s3-002-070-000-002-068-074-37397.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.5760000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{37887119-cf52-46f1-b147-067968bbf422}</destination>
+		</relationship>
+	</object>
+</objects>

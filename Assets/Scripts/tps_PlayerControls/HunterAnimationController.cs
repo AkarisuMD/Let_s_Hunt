@@ -39,7 +39,6 @@ public class HunterAnimationController : MonoBehaviour
     }
     private void ATK1() { if (isOwner) playerController.Atk1(); }
     private void ATK2() { if (isOwner) playerController.Atk2(); }
-    private void Revive() { if (isOwner) playerController.Revive(); }
     private void StartHealing() { 
         anim_Healing.SetActive(true);
         AnimationSequencerController _asc = anim_Healing.GetComponentInChildren<AnimationSequencerController>();

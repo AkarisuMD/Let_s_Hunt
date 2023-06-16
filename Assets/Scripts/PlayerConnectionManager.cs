@@ -17,7 +17,6 @@ public class PlayerConnectionManager : NetworkBehaviour
     public NetworkVariable<int> playerId { private set; get; } = new NetworkVariable<int>(0);
     [SerializeField] private SoldierLobby soldierLobby;
     public NetworkVariable<bool> isTheSoldierReady { private set; get; } = new NetworkVariable<bool>(false);
-
     //========
     //MONOBEHAVIOUR
     //========
@@ -72,12 +71,20 @@ public class PlayerConnectionManager : NetworkBehaviour
         JoinGame_Manager joinGame = FindAnyObjectByType<JoinGame_Manager>();
         joinGame.UpdateSoldierLobbyClientRpc();
     }
+    public void SetVivoxOn()
+    {
+        if (playerId.Value != 0)
+        {
+            JoinGame_Manager joinGame = FindAnyObjectByType<JoinGame_Manager>();
+            joinGame.vivoxObject[playerId.Value - 1].SetActive(true);
+        }
+    }
     private async void ConnectToVivox()
     {
         await System.Threading.Tasks.Task.Delay(50);
-        JoinGame_Manager joinGame = FindAnyObjectByType<JoinGame_Manager>();
 
         LoginCredentials.Instance.SetUserName(playerId.Value.ToString());
         LoginCredentials.Instance.Login();
     }
+
 }

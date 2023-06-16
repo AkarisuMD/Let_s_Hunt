@@ -21,9 +21,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_PlayerFront
-  m_Shader: {fileID: -6465566751694194690, guid: cffa0f3418beaab44a992755061c9801,
+  m_Shader: {fileID: -6465566751694194690, guid: 84c8b4f0ee170774fb88c3392e326b71,
     type: 3}
-  m_Parent: {fileID: 2100000, guid: 2826acb0fe6f8d449b74f90295753e22, type: 2}
+  m_Parent: {fileID: 2100000, guid: aa8768adca0791e45bde07c4da971d62, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -36,18 +36,37 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - Layer_594E39B9:
+        m_Texture: {fileID: -8328923581568760697, guid: c5a06fd559812654d9dd205d82a4fbd6,
+          type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpriteMask_Texture:
+        m_Texture: {fileID: -8328923581568760697, guid: c5a06fd559812654d9dd205d82a4fbd6,
+          type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _HaveMask: 1
     - _Hit_Distortion: 0.002
     - _IsFace: 1
-    - _IsFirstplayer: 1
+    - _IsFirstplayer: 0
     - _IsFourthPlayer: 0
     - _IsFront: 1
+    - _IsHiding: 0
     - _IsHit: 0
+    - _IsPlayer: 1
     - _IsRandom: 0
-    - _IsSecondPlayer: 1
+    - _IsSecondPlayer: 0
     - _IsThirdPlayer: 0
+    - _ItsEmissive: 0
     - _ItsMonster: 0
-    m_Colors: []
+    - _PlayerEmissiveColor: 0
+    - _Power: 0.2
+    - _QueueControl: 0
+    - _Recalculate: 5.34
+    m_Colors:
+    - _OrEmissiveColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

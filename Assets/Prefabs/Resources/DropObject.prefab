@@ -106,7 +106,7 @@ MonoBehaviour:
       Data2: 1208644440
       Data3: 1237922210
       Data4: 378533518
-    Path: event:/SFX/World/Drop/Grounded
+    Path: event:/SFX/World/Drop/Grounded_Drop
   Event: 
   PlayEvent: 7
   StopEvent: 0

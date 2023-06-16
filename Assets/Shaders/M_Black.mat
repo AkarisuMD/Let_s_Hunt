@@ -48,10 +48,10 @@ Material:
     m_Floats:
     - _Alpha: -2
     - _IsBlackout: 0
-    - _Magnification: 1
+    - _Magnification: -0.49
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Size: 0.1
+    - _Size: 0.32
     - _Speed: 1
     m_Colors:
     - _FocalPoint: {r: 0.5, g: 0.5, b: 0, a: 0}

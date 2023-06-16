@@ -13,6 +13,8 @@ public class MS_Invisible : Monster_State
         stateMachine.monster_Camera.ChangeCameraState(MonsterCameraState.FreeCam);
         stateMachine.monster_Movement.ChangeSpeed(MonsterSpeed.Invisible);
         stateMachine.monster_Skills.CanMonsterUseSkill(false);
+        stateMachine.monster_Hider.alphaOnHide = 0;
+        stateMachine.monster_Hider.RefreshHide();
     }
     public override void UpdateState()
     {

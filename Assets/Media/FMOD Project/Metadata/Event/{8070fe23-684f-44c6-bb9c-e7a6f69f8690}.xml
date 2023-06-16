@@ -59,7 +59,11 @@
 			<destination>{363de5f3-b730-4194-996e-802f75fcbf72}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{669ff1e7-47be-4a2d-b844-90d1ae2a296d}" />
+	<object class="EventAutomatableProperties" id="{669ff1e7-47be-4a2d-b844-90d1ae2a296d}">
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{8f0234a9-a7c3-44a2-801c-df2d3203e389}" />
 	<object class="Timeline" id="{c7f70890-bf8a-4ac6-b4ac-94909fe83eb7}">
 		<property name="isProxyEnabled">
@@ -84,7 +88,7 @@
 	</object>
 	<object class="MultiSound" id="{245caf29-ca49-42f0-8519-3f42aeebd940}">
 		<relationship name="sounds">
-			<destination>{52e2a706-8938-46a1-99ea-dc12098e95c9}</destination>
+			<destination>{f4286e1d-d3b3-477a-b6e2-77b243a39bea}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{c3b95c10-945f-48fc-928c-9ac562e8289a}">
@@ -95,20 +99,50 @@
 	<object class="MixerBusPanner" id="{28d806fd-69a7-45d1-9c27-6da3c64b0e28}" />
 	<object class="MixerBusEffectChain" id="{9a3829fb-7f49-40f1-bb18-d8aae71ff4f0}">
 		<relationship name="effects">
+			<destination>{1195aee1-1f69-4f6c-bc60-90af633f5951}</destination>
+			<destination>{98ea8b16-3364-4a59-b554-e56b2cf37673}</destination>
 			<destination>{9581adc4-0d57-4055-8514-30b6760c1e84}</destination>
 			<destination>{b8ad9787-4a0b-41e6-bbfe-ea1bb6f49732}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{94a298d0-a307-4c48-aec9-8ea5228b09e8}" />
-	<object class="SingleSound" id="{52e2a706-8938-46a1-99ea-dc12098e95c9}">
-		<property name="volume">
-			<value>-14.5</value>
+	<object class="SingleSound" id="{f4286e1d-d3b3-477a-b6e2-77b243a39bea}">
+		<property name="startOffset">
+			<value>30</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{fca5214c-a239-4068-81ff-5891784be3da}</destination>
+			<destination>{a2824aef-e314-4773-bf68-0cdc22247772}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{69abb789-117a-4bd5-be00-5998c900c22e}" />
+	<object class="PitchShifterEffect" id="{1195aee1-1f69-4f6c-bc60-90af633f5951}">
+		<property name="fftSize">
+			<value>720</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{98ea8b16-3364-4a59-b554-e56b2cf37673}">
+		<property name="decayTime">
+			<value>350</value>
+		</property>
+		<property name="diffusion">
+			<value>80</value>
+		</property>
+		<property name="density">
+			<value>76.5</value>
+		</property>
+		<property name="lowShelfFrequency">
+			<value>92</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>12</value>
+		</property>
+		<property name="highCut">
+			<value>360</value>
+		</property>
+		<property name="wetLevel">
+			<value>-12</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9581adc4-0d57-4055-8514-30b6760c1e84}" />
 	<object class="SpatialiserEffect" id="{b8ad9787-4a0b-41e6-bbfe-ea1bb6f49732}" />
 </objects>

@@ -20,8 +20,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Gameplay Ingredient/G_INGRENDIENT_GAME.unity
     guid: 25c0b8a3b619fa8428011452b839d11a
-  - enabled: 1
-    path: Assets/Scenes/LOUIS_SCENE.unity
+  - enabled: 0
+    path: Assets/Scenes/MAUDITE_SCENE.unity
     guid: dd032e4132d098a46baa1652eb2ecff2
   - enabled: 0
     path: 
@@ -44,4 +44,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MAXIME_NETWORKTEST.unity
     guid: ee51d7a7d8c75cf4c8fe1b4fe913c883
+  - enabled: 1
+    path: Assets/Scenes/MAIN.unity
+    guid: f8b6de816b5642545adf5e26925f36af
+  - enabled: 0
+    path: Assets/Scenes/NEW_LOUIS_SCENE_3.unity
+    guid: d3b08733b55cb8843aec9d3bf936cbac
+  - enabled: 0
+    path: Assets/Scenes/LEVEL_BUILDING_2.unity
+    guid: 5de1003389ff59a4f8c27e9c5d8659ee
+  - enabled: 0
+    path: Assets/NEW_LUCAS_SCNE.unity
+    guid: 7d9dde4665b60674c9603bbd1ea54e09
   m_configObjects: {}

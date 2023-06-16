@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 7850149446614778500}
   - component: {fileID: 139992288131440733}
   - component: {fileID: 4903777397083543318}
-  m_Layer: 0
+  - component: {fileID: 1783497951004370354}
+  m_Layer: 14
   m_Name: Prefab_Grass_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2926131920593087258
 Transform:
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &7850149446614778500
 MeshRenderer:
@@ -54,7 +55,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 169f30b5afea08a45ae2d51434a8e6c0, type: 2}
+  - {fileID: 2100000, guid: 552044d6f841e4c41afef3e80e6dddf6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,4 +105,23 @@ MonoBehaviour:
   m_shadowCastingMode: 1
   m_receiveShadows: 1
   m_lightProbeUsage: 1
-  m_material: {fileID: 2100000, guid: 169f30b5afea08a45ae2d51434a8e6c0, type: 2}
+  m_material: {fileID: 2100000, guid: 552044d6f841e4c41afef3e80e6dddf6, type: 2}
+--- !u!205 &1783497951004370354
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996707632590869066}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.05
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7850149446614778500}
+  m_Enabled: 1

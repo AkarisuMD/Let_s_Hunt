@@ -19,7 +19,7 @@ public class AirdropManager : NetworkBehaviour
         {
             int rng = Random.Range(0, airdropList.Count);
 
-            if (_list.Contains(airdropList[rng]))
+            if (!_list.Contains(airdropList[rng]))
             {
                 _list.Add(airdropList[rng]);
             }

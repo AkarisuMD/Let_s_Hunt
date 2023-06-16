@@ -15,7 +15,8 @@ public class Monster_StateFactory
         _statesList.Add(MonsterState.Invisible, new MS_Invisible(stateMachine, this));
         _statesList.Add(MonsterState.Fight, new MS_Fight(stateMachine, this));
         _statesList.Add(MonsterState.Stun, new MS_Stun(stateMachine, this));
-        _statesList.Add(MonsterState.Dead, new MS_OnStartGame(stateMachine, this));
+        _statesList.Add(MonsterState.Attack, new MS_Stun(stateMachine, this));
+        _statesList.Add(MonsterState.Dead, new MS_BeforeGame(stateMachine, this));
     }
     public Monster_State GetAnyState(MonsterState stateToGet)
     {
@@ -29,5 +30,5 @@ public class Monster_StateFactory
 }
 public enum MonsterState
 {
-    BeforeGame, OnStartGame, Invisible, Fight, Stun, Dead
+    BeforeGame, OnStartGame, Invisible, Fight, Attack, Stun, Dead
 }

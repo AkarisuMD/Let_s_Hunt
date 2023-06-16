@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a2e4d5a049d68aa45b8c0097f69df25e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 725dd4d60429de742b570020f3bc9a75, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Sprite_Texture:
@@ -36,17 +36,21 @@ Material:
     m_Floats:
     - _Alpha: 0.73
     - _ColorSeed: 0.5
+    - _IsFourthPlayer: 0
     - _IsHit: 0
     - _IsRandom: 0
     - _ItsEmissive: 0
     - _ItsMonster: 0
+    - _PlayerEmissiveColor: 0
     - _RandomInMovement: 1
+    - _Recalculate: 0
     - _WindSpeed: 2
     - _WindStrenght: 0.5
     - _Wind_Influence: 0.1
     - _hasWind: 0
     m_Colors:
     - _EmisionColor: {r: 404509.06, g: 404509.06, b: 404509.06, a: 0}
+    - _OrEmissiveColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5155014910642195051
 MonoBehaviour:

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{32e50af9-6936-4d10-9c3d-81b31f5a2b96}">
+		<property name="assetPath">
+			<value>Player/HealLH.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.5496041666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{37887119-cf52-46f1-b147-067968bbf422}</destination>
+		</relationship>
+	</object>
+</objects>

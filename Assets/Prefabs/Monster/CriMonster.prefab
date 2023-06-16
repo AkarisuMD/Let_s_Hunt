@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5249116926497788564}
   - component: {fileID: 7707701854188139620}
+  - component: {fileID: 122657596610974508}
   m_Layer: 0
   m_Name: CriMonster
   m_TagString: Untagged
@@ -54,3 +55,19 @@ MonoBehaviour:
   timerScream: 2
   cooldownScream: 4
   canScreaming: 1
+--- !u!114 &122657596610974508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560984257018406999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1

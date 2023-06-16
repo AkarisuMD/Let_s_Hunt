@@ -78,8 +78,8 @@ MonoBehaviour:
   AllowMinimumDistance: 0
   SightExtraAmount: 0.256
   MaxFogDistance: 10000
-  revealerMode: 0
-  numRevealersPerFrame: 3
+  revealerMode: 1
+  numRevealersPerFrame: 10
   maxPossibleRevealers: 256
   maxPossibleSegmentsPerRevealer: 125
   is2D: 0

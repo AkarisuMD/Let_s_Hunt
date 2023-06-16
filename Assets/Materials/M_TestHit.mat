@@ -39,13 +39,19 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _HaveMask: 0
     - _Hit_Distortion: 0.00456
+    - _IsFirstplayer: 0
+    - _IsFourthPlayer: 0
     - _IsHit: 0
+    - _IsPlayer: 0
     - _ItsMonster: 1
+    - _PlayerEmissiveColor: 0
     - _Speed_Distortion: 100
     - _Stenght_Distortion: 20
     - _hasWind: 0
     m_Colors:
     - _Character_HitColor: {r: 1176.267, g: 0, b: 142.14355, a: 1}
     - _Monster_HitColor: {r: 1.615406, g: 6.581747, b: 0, a: 0}
+    - _OrEmissiveColor: {r: 0.0013037875, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameplayIngredients.Actions;
 using GameplayIngredients;
+using Unity.Netcode;
 
 [RequireComponent(typeof(FullScreenFadeAction))]
 [RequireComponent(typeof(GameLevelLoadAction))]
@@ -35,5 +36,25 @@ public class Scene_Manager : Singleton<Scene_Manager>
     public void ReloadMainScene()
     {
         fadeAction.Execute();
+
+        try
+        {
+            LoginCredentials.Instance.Logout();
+        }
+        catch (System.Exception)
+        {
+
+            throw;
+        }
+
+        try
+        {
+            NetworkManager.Singleton.Shutdown();
+        }
+        catch (System.Exception)
+        {
+            Application.Quit();
+            throw;
+        }
     }
 }

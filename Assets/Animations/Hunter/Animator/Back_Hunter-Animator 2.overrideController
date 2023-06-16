@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Back_Hunter-Animator 2
+  m_Controller: {fileID: 9100000, guid: e27aab6ff517c2c4e885487f7c375d8f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5d5aba528bdafad408faab1eda2b4936, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 76e67fecf72bcf346bb02cf213d780cc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 34b1b7854372e7442b1f301831008983, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 54b160ea9630ac94f86d057956bd85d5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b49b38ab7024dd54fba20b09b22e6380, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dbee086a0f224cf47b523dc6b0cfade6, type: 2}

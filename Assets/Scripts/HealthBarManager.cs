@@ -46,7 +46,7 @@ public class HealthBarManager : Singleton<HealthBarManager>
         _healthBar.ChangeValueHealthBar(newHp);
 
         if (_indexOwner != indexPlayer) return;
-        if (newHp == 0) Tps_PlayerController.Instance.playerData.ChangeHp(-10);
+        if (_healthBar.GetHpValue() == 0) Tps_PlayerController.Instance.playerData.ChangeHp(-10);
     }
 
     private HealthBar GetHealthFromIndex(int indexPlayer)

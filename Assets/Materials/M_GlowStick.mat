@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7788848254414412610
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_GlowStick
+  m_Shader: {fileID: -6465566751694194690, guid: 84c8b4f0ee170774fb88c3392e326b71,
+    type: 3}
+  m_Parent: {fileID: 2100000, guid: aa8768adca0791e45bde07c4da971d62, type: 2}
+  m_ModifiedSerializedProperties: 2
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SpriteMask_Texture:
+        m_Texture: {fileID: 2800000, guid: 3e14553a635e70d4bb754fc47c3e902a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _HaveMask: 1
+    - _IsFirstplayer: 1
+    - _IsFourthPlayer: 0
+    - _IsHit: 0
+    - _IsPlayer: 0
+    - _IsSecondPlayer: 0
+    - _IsThirdPlayer: 0
+    - _ItsEmissive: 1
+    - _Recalculate: 1
+    m_Colors:
+    - _EmisionColor: {r: 512.00006, g: 0, b: 0, a: 0}
+    - _PutSameColor: {r: 0.764151, g: 0.19752577, b: 0.19752577, a: 1}
+  m_BuildTextureStacks: []

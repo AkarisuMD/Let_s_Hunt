@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Fog
   - Water
   - UI
   - 
@@ -19,8 +19,8 @@ TagManager:
   - Equipment
   - Environment
   - Monster
-  - 
-  - 
+  - EnvironmentNoFog
+  - Campfire
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Test
+    uniqueID: 3483623013
     locked: 0

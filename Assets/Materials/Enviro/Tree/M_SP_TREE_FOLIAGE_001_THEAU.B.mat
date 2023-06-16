@@ -28,6 +28,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 61eb8ae310496ba42958819a34b99230, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpriteMask_Texture:
+        m_Texture: {fileID: 2800000, guid: 1159cd33433342041b7c7aea96833a58, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Sprite_Texture:
         m_Texture: {fileID: 2800000, guid: 8c5fc648c27a9694493379ff721677a0, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -36,7 +40,10 @@ Material:
     m_Floats:
     - _Alpha: 0.73
     - _ColorSeed: 0.5
+    - _HaveMask: 1
+    - _IsHiding: 1
     - _IsHit: 0
+    - _IsLeaves: 1
     - _IsRandom: 1
     - _ItsEmissive: 0
     - _ItsMonster: 0

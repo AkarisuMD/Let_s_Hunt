@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6610215396444204605}
   - component: {fileID: 6248914379209030597}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6610215396444204605
 Transform:
@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.78109735, y: 6.319038, z: 0.0936532}
-  m_Center: {x: -0.109451324, y: 2.6595185, z: -0.0011034012}
+  m_Size: {x: 1.480412, y: 6.319038, z: 0.6622883}
+  m_Center: {x: -0.066874385, y: 2.6595185, z: 0.4189008}
 --- !u!1 &2201841849538100627
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,12 +65,12 @@ GameObject:
   - component: {fileID: 4454029305469743012}
   - component: {fileID: 104514267184866607}
   - component: {fileID: 7010909270716795721}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SP_TREE_TRUNK_001_THEAU.B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1328654788746102509
 Transform:
@@ -98,7 +98,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -167,12 +167,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7565384965863876573}
-  m_Layer: 0
+  - component: {fileID: 438794750783389710}
+  m_Layer: 12
   m_Name: Tree05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7565384965863876573
 Transform:
@@ -188,9 +189,36 @@ Transform:
   m_Children:
   - {fileID: 1067122811322841258}
   - {fileID: 6610215396444204605}
+  - {fileID: 1476798849471747493}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &438794750783389710
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707626618233129751}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.048109505
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5988845154722127981}
+    - renderer: {fileID: 4454029305469743012}
+    - renderer: {fileID: 4714334634882393911}
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5988845154722127981}
+    - renderer: {fileID: 4454029305469743012}
+  m_Enabled: 1
 --- !u!1 &7339920709753599699
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,12 +231,12 @@ GameObject:
   - component: {fileID: 5988845154722127981}
   - component: {fileID: 7798969418817798402}
   - component: {fileID: 8035137808593168632}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SP_TREE_FOLIAGE_001_THEAU.B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1067122811322841258
 Transform:
@@ -237,7 +265,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -297,3 +325,93 @@ MonoBehaviour:
   m_receiveShadows: 1
   m_lightProbeUsage: 1
   m_material: {fileID: 2100000, guid: 90035032a5466c74d97e6202d451daa9, type: 2}
+--- !u!1001 &4970085778679880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7565384965863876573}
+    m_Modifications:
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802659036728149272, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_Name
+      value: Prefab_FeuilleFall_Arbre
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718934698480045951, guid: be05b2e38343a284697f9583dec3dc88,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 839a7068c663bd54abd0121ca65416af, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be05b2e38343a284697f9583dec3dc88, type: 3}
+--- !u!4 &1476798849471747493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1472409892230757869, guid: be05b2e38343a284697f9583dec3dc88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4970085778679880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &4714334634882393911 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 4718934698480045951, guid: be05b2e38343a284697f9583dec3dc88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4970085778679880}
+  m_PrefabAsset: {fileID: 0}

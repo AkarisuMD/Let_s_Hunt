@@ -28,8 +28,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: 22c918b4f55fd514abdb2afa29b5f84e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpriteMask_Texture:
+        m_Texture: {fileID: 2800000, guid: 5f0750f6828fde441a6855f1738c48f6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _HaveMask: 1
+    - _IsHiding: 1
+    - _IsLeaves: 0
+    - _IsRandom: 1
+    - _IsTrunk: 1
+    - _ItsEmissive: 0
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &1216784817374075367

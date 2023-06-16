@@ -12,6 +12,7 @@ public class MonsterHitCollider : NetworkBehaviour
 {
     private bool canGetHit = true;
     public static event Action<int> onMonsterHit;
+    public Player_Animator player_Animator;
 
     [ServerRpc(RequireOwnership = false)]
     public void MonsterGetHitServerRpc(int damage)
@@ -19,7 +20,11 @@ public class MonsterHitCollider : NetworkBehaviour
         if(canGetHit)
         onMonsterHit?.Invoke(damage);
     }
-
+    public void FeedbackMonsterHit()
+    {
+        player_Animator.HitFeedback();
+        print("yess");
+    }
     public void GetStun()
     {
 
@@ -28,8 +33,10 @@ public class MonsterHitCollider : NetworkBehaviour
     {
         if(canGetHit)
         {
+            Debug.Log("Monster is Invicible for " + milliseconds * 100 + "seconds");
             canGetHit = false;
             await Task.Delay(milliseconds);
+            Debug.Log("Monster end of invicible time");
             canGetHit = true;
         }
     }

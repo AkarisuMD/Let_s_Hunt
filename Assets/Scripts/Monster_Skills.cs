@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using BrunoMikoski.AnimationSequencer;
 
 public class Monster_Skills : MonoBehaviour
@@ -21,6 +22,13 @@ public class Monster_Skills : MonoBehaviour
     //========
     //FONCTION
     //========
+    public void InputMousePosition(InputAction.CallbackContext context)
+    {
+        foreach(BaseCompetance_Monster competance_Monster in listOfCompetance)
+        {
+            competance_Monster.MousePosition(context);
+        }
+    }
     public void CanMonsterUseSkill(bool value)
     {
         if(value)

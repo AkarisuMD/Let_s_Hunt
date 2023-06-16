@@ -44,19 +44,33 @@ Material:
           type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpriteMask_Texture:
+        m_Texture: {fileID: -8328923581568760697, guid: d7c3ed0b7f896f34eb18a585e07ac89c,
+          type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _HaveMask: 1
     - _IsBack: 1
-    - _IsFirstplayer: 1
+    - _IsFirstplayer: 0
     - _IsFourthPlayer: 0
+    - _IsHiding: 0
     - _IsHit: 0
     - _IsPlayer: 1
     - _IsRandom: 0
     - _IsSecondPlayer: 0
     - _IsThirdPlayer: 0
+    - _ItsEmissive: 0
+    - _JustTheMask: 0
+    - _PlayerEmissiveColor: 0
+    - _Power: 0
     - _QueueControl: 0
     - _hasWind: 0
     m_Colors:
+    - _EmissiveColor: {r: 1, g: 1, b: 1, a: 0}
+    - _FirstPlayerColor: {r: 1, g: 1, b: 1, a: 0}
+    - _OrEmissiveColor: {r: 0.029157277, g: 0.029157277, b: 0.029157277, a: 0.92156863}
     - _SecondPlayerColor: {r: 0.020421766, g: 0.2264151, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5589130281118382203

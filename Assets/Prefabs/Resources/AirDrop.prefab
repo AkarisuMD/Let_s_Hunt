@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f64275bc1314b48a8d80c43c5c1db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sprite: {fileID: 21300000, guid: a2e4d5a049d68aa45b8c0097f69df25e, type: 3}
+  m_sprite: {fileID: 21300000, guid: 725dd4d60429de742b570020f3bc9a75, type: 3}
   m_color: {r: 1, g: 1, b: 1, a: 1}
   m_alphaCutoff: 0.5
   m_flipX: 0
@@ -198,7 +198,7 @@ Transform:
   - {fileID: 5270464810732502691}
   - {fileID: 3794931527060844529}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &554451674578531501
 BoxCollider:
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onCanPickUp: {fileID: 4560768609376652458}
   listEquipment: {fileID: 11400000, guid: 094cbb2e8bcac3e498b21a3fb904be96, type: 2}
-  nbInBox: 2
+  nbInBox: 3
 --- !u!65 &5125988992549776476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f64275bc1314b48a8d80c43c5c1db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sprite: {fileID: 21300000, guid: a2e4d5a049d68aa45b8c0097f69df25e, type: 3}
+  m_sprite: {fileID: 21300000, guid: 725dd4d60429de742b570020f3bc9a75, type: 3}
   m_color: {r: 1, g: 1, b: 1, a: 1}
   m_alphaCutoff: 0.5
   m_flipX: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f64275bc1314b48a8d80c43c5c1db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sprite: {fileID: 21300000, guid: a2e4d5a049d68aa45b8c0097f69df25e, type: 3}
+  m_sprite: {fileID: 21300000, guid: 725dd4d60429de742b570020f3bc9a75, type: 3}
   m_color: {r: 1, g: 1, b: 1, a: 1}
   m_alphaCutoff: 0.5
   m_flipX: 0
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f64275bc1314b48a8d80c43c5c1db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sprite: {fileID: 21300000, guid: a2e4d5a049d68aa45b8c0097f69df25e, type: 3}
+  m_sprite: {fileID: 21300000, guid: 725dd4d60429de742b570020f3bc9a75, type: 3}
   m_color: {r: 1, g: 1, b: 1, a: 1}
   m_alphaCutoff: 0.5
   m_flipX: 0
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f64275bc1314b48a8d80c43c5c1db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sprite: {fileID: 21300000, guid: a2e4d5a049d68aa45b8c0097f69df25e, type: 3}
+  m_sprite: {fileID: 21300000, guid: 725dd4d60429de742b570020f3bc9a75, type: 3}
   m_color: {r: 1, g: 1, b: 1, a: 1}
   m_alphaCutoff: 0.5
   m_flipX: 0

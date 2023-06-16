@@ -1,4 +1,5 @@
 using Unity.Netcode;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
 
 public class EquipmentManager : NetworkBehaviour
@@ -37,6 +38,22 @@ public class EquipmentManager : NetworkBehaviour
         _equip.ItemUsed();
 
     }
+
+    [SerializeField] private GameObject prefab_Drop;
+    [ServerRpc(RequireOwnership = false)]
+    public void DropServerRpc(Vector3 position, int indexEquipment, Vector3 lookDirection)
+    {
+        GameObject _drop = Instantiate(Resources.Load<GameObject>("DropObject"), position, Quaternion.Euler(0, 0, 0));
+        _drop.GetComponent<NetworkObject>().Spawn();
+        _drop.GetComponentInChildren<ObjectDrop>().SetUpObjClientRpc(indexEquipment, true, Tps_PlayerController.Instance.playerData.monitor.index);
+
+        float _directionX = Mathf.Clamp(lookDirection.x, -150, 150);
+        float _directionY = Mathf.Clamp(lookDirection.y, -150, 150);
+
+        _drop.GetComponent<Rigidbody>().velocity += new Vector3(-_directionX, 0, -_directionY) * Time.deltaTime + Vector3.up * 4;
+
+    }
+
 
     [ServerRpc(RequireOwnership = false)]
     protected void _UseFlareServerRpc(Vector3 player, Vector2 direction)

@@ -12,7 +12,7 @@ public class Monster_Movement : MonoBehaviour
     //========
 
     [Header("Ref")]
-    [SerializeField] private ParticleSystem onClickParticule;
+    [SerializeField] private Animation onClickAnimation;
     [SerializeField] private GameObject mousePointeur;
     public NavMeshAgent navMeshAgent;
 
@@ -31,7 +31,7 @@ public class Monster_Movement : MonoBehaviour
 
         //Feedback
         mousePointeur.transform.position = newDestination;
-        onClickParticule.Play();
+        onClickAnimation.Play();
 
         navMeshAgent.SetDestination(newDestination);
     }
@@ -80,7 +80,7 @@ public class Monster_Movement : MonoBehaviour
                 break;
         }
         navMeshAgent.speed = nextSpeed;
-        navMeshAgent.acceleration = nextSpeed;
+        //navMeshAgent.acceleration = nextSpeed;
     }
 }
 public enum MonsterSpeed

@@ -72,6 +72,7 @@ Material:
     m_Floats:
     - _Hit_Distortion: 0.01
     - _IsBack: 0
+    - _IsFace: 0
     - _IsFirstplayer: 0
     - _IsFourthPlayer: 0
     - _IsFront: 0
@@ -81,7 +82,7 @@ Material:
     - _IsSecondPlayer: 1
     - _IsSide: 0
     - _IsThirdPlayer: 0
-    - _ItsEmissive: 1
+    - _ItsEmissive: 0
     - _ItsMonster: 0
     - _Speed_Distortion: 100
     - _Stenght_Distortion: 20

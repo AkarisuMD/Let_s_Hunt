@@ -1,22 +1,36 @@
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 using NaughtyAttributes;
 using DG.Tweening;
-
-public class Monster_Animator : MonoBehaviour
+using UnityEditor;
+using Unity.Multiplayer.Samples.Utilities.ClientAuthority;
+public class Player_Animator : NetworkBehaviour
 {
-    [SerializeField] private List<Animator> animatorsToSeedSpeed = new();
+    public bool debug = false;
+    public void SetDebug(bool value) => debug = value;
+    [SerializeField] private List<Animator> animatorToSendSpeed;
     [SerializeField] private Monster_StateMachine monster_Statemachine;
     [SerializeField] private float buffer = 0.2f;
     [SerializeField] private string alphaMaterialParameterName = "_Alpha";
 
     private List<SpriteRenderer> allTheSpriteRender = new();
     private List<Material> spritesMaterials = new();
-
+    private Tween onHitChange;
     private NavMeshAgent navMesh => monster_Statemachine.monster_Movement.navMeshAgent;
+    private int numberOfParrelIsHitIsPlayed = 0;
+    private void OnEnable()
+    {
+        //MonsterHitCollider.onMonsterHit += HitFeedback;
+
+    }
+    private void OnDisable()
+    {
+        //MonsterHitCollider.onMonsterHit -= HitFeedback;
+    }
     private void Awake()
     {
         allTheSpriteRender = gameObject.GetComponentsInChildren<SpriteRenderer>().ToList();
@@ -25,29 +39,122 @@ public class Monster_Animator : MonoBehaviour
             spritesMaterials.Add(spriteRenderer.material);
         }
     }
-    private void Update()
+    [Button]
+    public async void HitFeedback(int damage = 0)
     {
-        float tktSpeed = navMesh.velocity.magnitude;
+        numberOfParrelIsHitIsPlayed++;
 
-        foreach (Animator animatorMonster in animatorsToSeedSpeed)
+        HitFeedback(true);
+
+        await System.Threading.Tasks.Task.Delay(500);
+
+        if (numberOfParrelIsHitIsPlayed <= 1)
         {
-            animatorMonster.SetFloat("Speed", tktSpeed);
+            HitFeedback(false);
+        }
+        numberOfParrelIsHitIsPlayed--;
+    }
+    public void HitFeedback(bool value)
+    {
+        if(value)
+        {
+            foreach (Material material in spritesMaterials)
+            {
+                material.SetFloat("_IsHit", 1);
+            }
+        }
+        else
+        {
+            foreach (Material material in spritesMaterials)
+            {
+                material.SetFloat("_IsHit", 0);
+            }
         }
     }
-    [Button]
-    public void SetInvisible()
+    public void SendSpeedToAnimator(float speed)
     {
-        foreach(Material material in spritesMaterials)
+        speed = Mathf.Clamp(speed, 0, 1);
+        foreach (Animator animator in animatorToSendSpeed)
         {
-            material.DOFloat(0, alphaMaterialParameterName, 3);
+            animator.SetFloat("speed", speed);
         }
     }
-    [Button]
-    public void SetVisible()
+    public void AttackAnimator()
     {
-        foreach (Material material in spritesMaterials)
+        foreach (Animator animator in animatorToSendSpeed)
         {
-            material.DOFloat(1, alphaMaterialParameterName, 3);
+            animator.GetComponent<ClientNetworkAnimator>().SetTrigger("whenAttack");
+            if(debug) animator.SetTrigger("whenAttack");
+        }
+    }
+    public void PlayAttackAnimator(int time)
+    {
+        foreach (Animator animator in animatorToSendSpeed)
+        {
+            animator.Play("Attack", 0, time);
+        }
+    }
+    public void DashAnimator()
+    {
+        foreach (Animator animator in animatorToSendSpeed)
+        {
+            animator.SetTrigger("whenDash");
+        }
+    }
+    public void DeathAnimator()
+    {
+        foreach (Animator animator in animatorToSendSpeed)
+        {
+            animator.GetComponent<ClientNetworkAnimator>().SetTrigger("whenDied");
+        }
+    }
+    public Animator GetPlayerAnimator(int index)
+    {
+        if (animatorToSendSpeed.Count > index)
+        {
+            return animatorToSendSpeed[index];
+        }
+        else return animatorToSendSpeed[0];
+    }
+
+    [ClientRpc]
+    public void SetHunterColorViaIdClientRpc(int idPlayer)
+    {
+        switch(idPlayer)
+        {
+            case 1:
+                foreach(Material material in spritesMaterials)
+                {
+                    material.SetFloat("_IsFirstplayer", 1);
+                }
+                break;
+            case 2:
+                foreach (Material material in spritesMaterials)
+                {
+                    material.SetFloat("_IsSecondPlayer", 1);
+                }
+                break;
+            case 3:
+                foreach (Material material in spritesMaterials)
+                {
+                    material.SetFloat("_IsThirdPlayer", 1);
+                }
+                break;
+            case 4:
+                foreach (Material material in spritesMaterials)
+                {
+                    material.SetFloat("_IsFourthPlayer", 1);
+                }
+                break;
+            default:
+                return;
+        }
+    }
+    public void SetUpdateTime(float value)
+    {
+        foreach (Animator animator in animatorToSendSpeed)
+        {
+            animator.speed = value;
         }
     }
 }

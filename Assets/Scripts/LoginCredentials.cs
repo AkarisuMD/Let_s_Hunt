@@ -7,7 +7,7 @@ using VivoxUnity;
 
 public class LoginCredentials : Singleton<LoginCredentials>
 {
-    VivoxUnity.Client client;
+    public VivoxUnity.Client client;
     private Uri server = new Uri("https://unity.vivox.com/appconfig/90718-let_s-74999-udash");
     private string domain = "mtu1xp.vivox.com";
     private string issuer = "90718-let_s-74999-udash";
@@ -20,14 +20,14 @@ public class LoginCredentials : Singleton<LoginCredentials>
 
 
     public bool activeVivox;
-
+    public List<PositionalChannel> positionalChannel;
 
     private string userName;
     private string channelName;
 
     public bool channelConnected;
 
-    private void Awake()
+    private void Start()
     {
         client = new Client();
         client.Uninitialize();
@@ -86,8 +86,12 @@ public class LoginCredentials : Singleton<LoginCredentials>
             case LoginState.LoggedIn:
                 Debug.Log($"Logged In {loginSession.LoginSessionId.Name}");
 
-                SetChannelName(/*joinGame.joinCode.Value*/ "Dudule");
+                JoinGame_Manager joinGame = FindAnyObjectByType<JoinGame_Manager>();
+                SetChannelName(joinGame.joinCode.Value.ToString());
                 JoinChannel();
+                break;
+            case LoginState.LoggedOut:
+                UI_Message_Manager.Instance.ShowMessage(Color.red, "Connection To Voice chat Failed, Please Restart");
                 break;
 
         }
@@ -116,7 +120,9 @@ public class LoginCredentials : Singleton<LoginCredentials>
     public void JoinChannel()
     {
         if (!activeVivox) return;
-        ChannelId channelId = new ChannelId(issuer, channelName, domain, ChannelType.Positional);
+
+        ChannelId channelId = new ChannelId(issuer, channelName, domain, ChannelType.Positional, 
+            new Channel3DProperties(32, 1, 1.0f, AudioFadeModel.InverseByDistance));
         channelSession = loginSession.GetChannelSession(channelId);
 
         Bind_Channel_Callback_Listeners(true, channelSession);
@@ -136,7 +142,6 @@ public class LoginCredentials : Singleton<LoginCredentials>
     private void Channel_Status(object sender, PropertyChangedEventArgs loginArgs)
     {
         var source = (IChannelSession)sender;
-
         switch (source.ChannelState)
         {
             case ConnectionState.Connecting:
@@ -145,10 +150,28 @@ public class LoginCredentials : Singleton<LoginCredentials>
             case ConnectionState.Connected:
                 Debug.Log($"{source.Channel.Name} Connected");
                 channelConnected = true;
-                PositionalChannel[] positionalChannel = FindObjectsOfType<PositionalChannel>();
+
                 foreach (var item in positionalChannel)
                 {
                     item._Start();
+                    item.gameObject.SetActive(false);
+                }
+                PlayerConnectionManager[] connectionsManager = FindObjectsOfType<PlayerConnectionManager>();
+                PlayerConnectionManager currentPlayerConnectionManager = null;
+                foreach (PlayerConnectionManager connectionManager in connectionsManager)
+                {
+                    if (connectionManager.IsOwner)
+                    {
+                        currentPlayerConnectionManager = connectionManager;
+                    }
+                }
+                if (currentPlayerConnectionManager.playerId.Value != 0)
+                {
+                    currentPlayerConnectionManager.SetVivoxOn();
+                }
+                else
+                {
+                    MonsterVoice.Instance.positionalChannel.SetActive(true);
                 }
                 break;
             case ConnectionState.Disconnecting:
@@ -158,6 +181,9 @@ public class LoginCredentials : Singleton<LoginCredentials>
             case ConnectionState.Disconnected:
                 Debug.Log($"{source.Channel.Name} Disconnected");
                 channelConnected = false;
+                break;
+            default:
+                Debug.LogError("Strange");
                 break;
         }
     }
@@ -240,6 +266,28 @@ public class LoginCredentials : Singleton<LoginCredentials>
                 }
             });
         };
+    }
+
+    public void AdjustVolume(float value)
+    {
+        IAudioDevices devices = client.AudioInputDevices;
+        // Refresh list of devices to have it up to date
+        var ar = devices.BeginRefresh(new AsyncCallback((IAsyncResult result) =>
+        {
+            // Set the volume for the device
+            devices.VolumeAdjustment = Mathf.RoundToInt(value);
+        }));
+    }
+    public void AdjustVolumeOfOther(int indexPlayer, int volume)
+    {
+        foreach (var participant in channelSession.Participants)
+        {
+            if (indexPlayer.ToString() == participant.Account.Name)
+            {
+                participant.LocalVolumeAdjustment = volume;
+                break;
+            }
+        }
     }
 
     #endregion

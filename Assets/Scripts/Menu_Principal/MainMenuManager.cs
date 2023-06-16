@@ -300,9 +300,6 @@ public class MainMenuManager : Singleton<MainMenuManager>
     /// <param name="value"></param>
     private void StateInteractable(bool value)
     {
-        _ContinueButton.interactable = value;
-        _NewGameButton.interactable = value;
-        _LoadButton.interactable = value;
         _QuitButton.interactable = value;
         _FullscreenButton.interactable = value;
         _ResolutionDropdown.interactable = value;
@@ -483,7 +480,7 @@ public class MainMenuManager : Singleton<MainMenuManager>
     {
         master = FMODUnity.RuntimeManager.GetBus("bus:/");
         music = FMODUnity.RuntimeManager.GetBus("bus:/Music");
-        sound = FMODUnity.RuntimeManager.GetBus("bus:/Other");
+        sound = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
     }
 
     /// <summary>

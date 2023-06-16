@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>World</value>
 		</property>
+		<property name="pitch">
+			<value>-1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{ab0b5535-5798-41bf-aa9a-ab98044eaf73}</destination>
 		</relationship>

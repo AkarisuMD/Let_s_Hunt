@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b0c83b1a47b341e4db14aa05c8057d87, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6e8a1b1ccd9505489eafa065ea99a48, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_34cd9c9b0b1840b0b6d8fc44bef70619_Texture_1:
@@ -50,15 +50,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CloudStrenght: 0.85
-    - _CloudsDensity: 0.15
-    - _CloudsSize: -0.15
+    - _CloudStrenght: 0.31
+    - _CloudsDensity: 0.762
+    - _CloudsSize: 0.1
     - _CloudsSpeed: 2.25
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _CloudsDirection: {r: 1.27, g: 0.31, b: 0, a: 0}
-    - _Color: {r: 0.005787062, g: 1.2810919, b: 1.5336015, a: 1}
+    - _Color: {r: 6.3333836, g: 6.3333836, b: 6.3333836, a: 1}
     - _Offset: {r: 1, g: 1, b: 0, a: 0}
     - _Tiling: {r: 100, g: 100, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -42,7 +42,7 @@ public class SoldierLobby : MonoBehaviour
         soliderNameUI.text = "Ready !";
 
         soliderWaitingIcon.SetActive(false);
-        soliderJoinedIcon.SetActive(false);
+        soliderJoinedIcon.SetActive(true);
         soliderReadyIcon.SetActive(true);
     }
 }

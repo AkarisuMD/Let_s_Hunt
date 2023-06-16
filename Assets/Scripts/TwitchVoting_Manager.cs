@@ -7,12 +7,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
 
-public class TwitchVoting_Manager : MonoBehaviour
+public class TwitchVoting_Manager : Singleton<TwitchVoting_Manager>
 {
     //========
     //VARIABLES
     //========
-    public static Action<string> onStartingVote;
+    public static Action onStartingVote;
     public static Action<int> addingVote;
 
     public List<sc_TwitchVote> listOfAllPossibleVote = new();
@@ -41,19 +41,18 @@ public class TwitchVoting_Manager : MonoBehaviour
     //========
 
     [Button]
-    public async void StartTwitchVote()
+    public void StartTwitchVote()
     {
         print("Strating Vote");
         if (isVoteStarted) return;
         ResetVoteCount();
 
-        List<sc_TwitchVote> listOfChosenVote = listOfAllPossibleVote;
-
         isVoteStarted = true;
+
+        List<sc_TwitchVote> listOfChosenVote = listOfAllPossibleVote;
 
         foreach (sc_TwitchVote twitchVote in listOfChosenVote)
         {
-            onStartingVote?.Invoke(twitchVote.name);
             Transform newVoteUI = Instantiate(voteUI.transform, voteGroupUI.transform);
             if (newVoteUI.TryGetComponent<VoteRef_UI>(out VoteRef_UI voteRef_UI))
             {
@@ -61,8 +60,7 @@ public class TwitchVoting_Manager : MonoBehaviour
                 voteRef_UI.InitVoteUI(twitchVote.nameOfTheVote, listOfAllPossibleVote.Count);
             }
         }
-        await Task.Delay(voteTime);
-        EndTwitchVote();
+        onStartingVote?.Invoke();
     }
     public void OnVote(int voteNumber)
     {

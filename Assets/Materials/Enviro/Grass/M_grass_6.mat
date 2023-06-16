@@ -28,6 +28,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: ea45d6acfb7f1404b80001d62e4010d2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpriteMask_Texture:
+        m_Texture: {fileID: 2800000, guid: 465901a116a1d9e4491a9063d31a885e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Sprite_Texture:
         m_Texture: {fileID: 2800000, guid: 8c5fc648c27a9694493379ff721677a0, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -36,15 +40,18 @@ Material:
     m_Floats:
     - _Alpha: 0.73
     - _ColorSeed: 0.5
+    - _HaveMask: 1
     - _IsHit: 0
+    - _IsLeaves: 0
     - _IsRandom: 1
     - _ItsEmissive: 0
     - _ItsMonster: 0
     - _RandomInMovement: 1
-    - _WindSpeed: 2.3
-    - _WindStrenght: 0.6
-    - _Wind_Influence: 0.204
+    - _WindSpeed: 2
+    - _WindStrenght: 1
+    - _Wind_Influence: 0.1
     - _hasWind: 1
+    - _isGrass: 1
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &5155014910642195051

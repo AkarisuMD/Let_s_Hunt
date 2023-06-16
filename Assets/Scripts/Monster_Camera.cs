@@ -12,11 +12,10 @@ public class Monster_Camera : MonoBehaviour
     //========
 
     [Header("Free Camera Ref")]
-    [SerializeField] private CinemachineVirtualCamera freeCamera;
-    [SerializeField] private FollowGameObject freeCamFollowLockedScript;
 
-    [Header("Locked Camera Ref")]
-    [SerializeField] private CinemachineVirtualCamera lockedCamera;
+    [SerializeField] private CinemachineVirtualCamera monster_camera;
+    [SerializeField] private FollowGameObject freeCamFollowLockedScript;
+    [SerializeField] private GameObject cameraRoot;
 
     [Header("Free Camera Parameter")]
     [SerializeField] private float cameraWASDSpeed = 1.2f;
@@ -34,7 +33,7 @@ public class Monster_Camera : MonoBehaviour
     private void FixedUpdate()
     {
         //Camera Movement on Update So If Key is Long Press, continue to move
-        freeCamera.transform.position += movementDirectionCamera * cameraWASDSpeed;
+        cameraRoot.transform.position += movementDirectionCamera * cameraWASDSpeed;
         OnCameraMovementBorderMouse();
     }
 
@@ -55,7 +54,7 @@ public class Monster_Camera : MonoBehaviour
 
         Vector2 mousePositionOnScreen = Input.mousePosition;
 
-        Vector3 newCameraPosition = freeCamera.transform.position;
+        Vector3 newCameraPosition = cameraRoot.transform.position;
         //This is boring
 
         //Up
@@ -82,7 +81,7 @@ public class Monster_Camera : MonoBehaviour
             newCameraPosition.z -= cameraMouseSpeed * Time.deltaTime;
         }
 
-        freeCamera.transform.position = newCameraPosition;
+        cameraRoot.transform.position = newCameraPosition;
     }
     public void ChangeCameraState(MonsterCameraState newState)
     {
@@ -91,12 +90,12 @@ public class Monster_Camera : MonoBehaviour
         {
             case MonsterCameraState.FreeCam:
 
-                ChangeCameraPriority(10, 0);
+                monster_camera.Priority = 10;
                 freeCamFollowLockedScript.enabled = false;
                 break;
             case MonsterCameraState.LockedCam:
 
-                ChangeCameraPriority(0, 10);
+                monster_camera.Priority = 10;
                 freeCamFollowLockedScript.enabled = true;
                 break;
         }
@@ -107,8 +106,8 @@ public class Monster_Camera : MonoBehaviour
     }
     private void ChangeCameraPriority(int freeCam, int lockedCam)
     {
-        freeCamera.Priority = freeCam;
-        lockedCamera.Priority = lockedCam;
+        //freeCamera.Priority = freeCam;
+        //lockedCamera.Priority = lockedCam;
     }
     [Button]
     public void TestingLockCam()

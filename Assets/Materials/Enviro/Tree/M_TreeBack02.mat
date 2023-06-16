@@ -25,7 +25,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _IsHiding: 1
+    - _IsLeaves: 0
+    - _IsRandom: 1
+    - _ItsEmissive: 0
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &1216784817374075367

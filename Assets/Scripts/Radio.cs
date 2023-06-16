@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using System;
+using FMODUnity;
 
 [RequireComponent(typeof(SphereCollider))]
 public class Radio : InteractableObject
 {
+
     // Reference
     [SerializeField] private GameObject onCanPickUp, notAvailable;
 
@@ -13,7 +16,19 @@ public class Radio : InteractableObject
     [SerializeField] private bool available;
     [SerializeField] private float unavailableTimer = 120f;
 
+    [SerializeField] private ParticleSystem particle1, particle2;
+
+    [SerializeField] private FMODUnity.EventReference UsingAudio, ResetAudio;
+
     // Monobehaviour
+    private void OnEnable()
+    {
+        TwitchVoting_Manager.onStartingVote += () => StartCoroutine(AvailableTimer());
+    }
+    private void OnDisable()
+    {
+        TwitchVoting_Manager.onStartingVote -= () => StartCoroutine(AvailableTimer());
+    }
     private void Start()
     {
         isInteractable = true;
@@ -59,7 +74,12 @@ public class Radio : InteractableObject
     {
         if (!available) return;
 
+        particle1.Play();
+        particle2.Play();
+
         available = false;
+
+
 
         if (IsHost) StartVote();
     }
@@ -68,7 +88,7 @@ public class Radio : InteractableObject
 
     private void StartVote()
     {
-        StartCoroutine(AvailableTimer());
+        TwitchVoting_Manager.Instance.StartTwitchVote();
     }
 
     private IEnumerator AvailableTimer()
@@ -77,6 +97,7 @@ public class Radio : InteractableObject
         if (!available && !notAvailable.active) notAvailable.SetActive(true);
         yield return new WaitForSeconds(unavailableTimer);
         SetAvailableClientRpc();
+        TwitchVoting_Manager.Instance.EndTwitchVote();
     }
 
     [ClientRpc]

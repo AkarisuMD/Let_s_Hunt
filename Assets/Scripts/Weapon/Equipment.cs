@@ -116,8 +116,6 @@ public class Equipment : MonoBehaviour
     {
         if (onSelected)
         {
-            GameObject _drop = Instantiate(Resources.Load<GameObject>("DropObject"), player.transform.position, Quaternion.Euler(0,0,0));
-            SC_sc_Object _sc_sc_equipment = Resources.Load<SC_sc_Object>("Equipment/");
             int _equipmentIndex = 0;
             for (int i = 0; i < _sc_sc_equipment.objects.Count; i++)
             {
@@ -127,14 +125,8 @@ public class Equipment : MonoBehaviour
                     break;
                 }
             }
-            _drop.GetComponentInChildren<ObjectDrop>().SetUpObjClientRpc(_equipmentIndex, true, Tps_PlayerController.Instance.playerData.monitor.index);
 
-            float _directionX = Mathf.Clamp(player.directionLook.x, -150, 150);
-            float _directionY = Mathf.Clamp(player.directionLook.y, -150, 150);
-
-            _drop.GetComponent<Rigidbody>().velocity += new Vector3(-_directionX, 0, -_directionY) * Time.deltaTime + Vector3.up * 4;
-
-
+            equipmentManager.DropServerRpc(player.transform.position, _equipmentIndex, player.directionLook);
             ItemUsed();
         }
     }
