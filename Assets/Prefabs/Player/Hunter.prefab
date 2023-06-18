@@ -96,6 +96,7 @@ MonoBehaviour:
   player_Animator: {fileID: 0}
   vivoxAudio: {fileID: 0}
   _reviveObj: {fileID: 0}
+  hunterDamageColliders: []
   weapon: {fileID: 11400000, guid: 33a7d1fb9ba12a541b2644d66a2aaae6, type: 2}
   stateMachine:
     currentState: 0
@@ -1012,7 +1013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5bc81da098a944abb8cdc881126fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 2586729399586778145}
   isActif: 0
   toggleMute: 0
   forcedMute: 0

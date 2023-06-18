@@ -87,18 +87,12 @@ public class Player_Animator : NetworkBehaviour
             if(debug) animator.SetTrigger("whenAttack");
         }
     }
-    public void PlayAttackAnimator(int time)
-    {
-        foreach (Animator animator in animatorToSendSpeed)
-        {
-            animator.Play("Attack", 0, time);
-        }
-    }
     public void DashAnimator()
     {
         foreach (Animator animator in animatorToSendSpeed)
         {
-            animator.SetTrigger("whenDash");
+            animator.GetComponent<ClientNetworkAnimator>().SetTrigger("whenDodge");
+            if (debug) animator.SetTrigger("whenDodge");
         }
     }
     public void DeathAnimator()

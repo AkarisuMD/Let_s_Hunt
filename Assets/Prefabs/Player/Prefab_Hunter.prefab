@@ -861,7 +861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5bc81da098a944abb8cdc881126fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 2403324170589150992}
   isActif: 0
   toggleMute: 0
   forcedMute: 0

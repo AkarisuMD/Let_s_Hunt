@@ -13,7 +13,7 @@ public class Monster_Skills : MonoBehaviour
     //========
     [SerializeField] private List<BaseCompetance_Monster> listOfCompetance = new();
     [SerializeField] private AnimationSequencerController skillUIAnimationController;
-    public static Action<int> whenASkillIsUsed;
+    public static Action<int, AttackAnim> whenASkillIsUsed;
 
     //========
     //MONOBEHAVIOUR
@@ -66,4 +66,8 @@ public class Monster_Skills : MonoBehaviour
         skillUIAnimationController.SetPlayType(AnimationSequencerController.PlayType.Backward);
         skillUIAnimationController.Play();
     }
+}
+public enum AttackAnim
+{
+    Bite, Dash
 }

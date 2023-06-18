@@ -13,13 +13,16 @@ public class MS_Stun : Monster_State
     {
         Debug.Log("Monster is Stun");
         stateMachine.monster_Input.enabled = false;
-        stateMachine.monster_Animator.SetTrigger("isStun");
+        stateMachine.Navmesh.destination = stateMachine.monster_Movement.transform.position;
+        stateMachine.Navmesh.speed = 0;
 
         await Task.Delay(stateMachine.stunTimeInMillisecond);
         SwitchState(factory.GetAnyState(MonsterState.Fight));
     }
     public override void ExitState()
     {
+        stateMachine.monster_Input.enabled = true;
+        stateMachine.Navmesh.speed = 1;
         Debug.Log("Monster Is Un-Stun");
     }
 }

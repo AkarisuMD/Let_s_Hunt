@@ -10,7 +10,6 @@ public class Cac_Competance_Monstre : BaseCompetance_Monster
     protected override async void SkillFonction()
     {
         isAttacking = true;
-        animator.SetTrigger("OnAttack");
 
         await Task.Delay(timeOfTheAttack);
 

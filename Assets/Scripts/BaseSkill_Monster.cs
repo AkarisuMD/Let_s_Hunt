@@ -25,6 +25,7 @@ public class BaseCompetance_Monster : MonoBehaviour
     private float cooldownCurrentTimer = 0;
     private float _lookTargetRotation;
     protected bool isAttacking = false;
+    [SerializeField] private AttackAnim animationTrigger;
 
     public float CooldownTimer { get { return cooldownCurrentTimer; } set 
         { 
@@ -91,7 +92,7 @@ public class BaseCompetance_Monster : MonoBehaviour
 
         SkillFonction();
         isSkillOnCooldown = true;
-        Monster_Skills.whenASkillIsUsed?.Invoke(timeOfMonsterStunWhenAttack);
+        Monster_Skills.whenASkillIsUsed?.Invoke(timeOfMonsterStunWhenAttack, animationTrigger);
     }
     protected virtual void SkillFonction()
     {

@@ -15,6 +15,8 @@ public class MS_Fight : Monster_State
         stateMachine.monster_Skills.CanMonsterUseSkill(true);
         stateMachine.monster_Hider.alphaOnHide = 0.15f;
         stateMachine.monster_Hider.RefreshHide();
+
+        Monster_Skills.whenASkillIsUsed += OnSkillUsed;
     }
     public override void UpdateState()
     {
@@ -25,6 +27,29 @@ public class MS_Fight : Monster_State
     }
     public override void ExitState()
     {
+        try
+        {
+            Monster_Skills.whenASkillIsUsed -= OnSkillUsed;
+        } catch { }
         Debug.Log("End Fight State");
+    }
+    private void OnSkillUsed(int timeOfStunOfTheAttack, AttackAnim attackAnim)
+    {
+
+
+        stateMachine.stunTimeInMillisecond = timeOfStunOfTheAttack;
+
+        switch (attackAnim)
+        {
+            case AttackAnim.Bite:
+                stateMachine.player_Animator.AttackAnimator();
+                break;
+            case AttackAnim.Dash:
+                stateMachine.player_Animator.DashAnimator();
+                break;
+        }
+
+        SwitchState(factory.GetAnyState(MonsterState.Stun));
+
     }
 }

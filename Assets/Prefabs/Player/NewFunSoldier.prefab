@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e1fa1b231a1964b9d5e6ec38b6afa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   animatorToSendSpeed:
   - {fileID: 4715191107335376612}
   - {fileID: 2659800850599523462}
@@ -1049,7 +1050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5bc81da098a944abb8cdc881126fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 1857879530867298297}
   isActif: 0
   toggleMute: 0
   forcedMute: 0
@@ -2101,7 +2101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9013098282540401922}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e2425f8229e28d4096dd1e67a12afa7, type: 3}
   m_Name: 

@@ -23,11 +23,11 @@ public class Monster_Movement : MonoBehaviour
     //========
     //FONCTION
     //========
-    public void OnClickMovement(InputAction.CallbackContext context = new ())
+    public void OnClickMovement(Vector3 newDestination)
     {
-        Vector3 newDestination = GetMouseWorldPositionOnNavmesh(cameraCastLayer);
+        /*Vector3 newDestination = GetMouseWorldPositionOnNavmesh(cameraCastLayer);
         Debug.Log("Monster Click Detected / Position = " + newDestination);
-        if (newDestination == Vector3.zero) return;
+        if (newDestination == Vector3.zero) return;*/
 
         //Feedback
         mousePointeur.transform.position = newDestination;

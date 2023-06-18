@@ -7,6 +7,8 @@ using Unity.Netcode;
 
 public class ActivateObjectByDirection : NetworkBehaviour
 {
+    public bool isPositionLocked = false;
+
     [SerializeField] private GameObject up_Object;
     [SerializeField] private GameObject left_Object;
     [SerializeField] private GameObject right_Object;
@@ -35,7 +37,7 @@ public class ActivateObjectByDirection : NetworkBehaviour
         if (!IsOwner && !debug) return;
         Vector3 direction;
 
-        if (isMonster)
+        if (isMonster && !isPositionLocked)
         { direction = navMesh.desiredVelocity;
 
             UpdateDirection(new(direction.x, direction.z));

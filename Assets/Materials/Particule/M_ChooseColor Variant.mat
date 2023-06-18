@@ -37,7 +37,7 @@ Material:
     - _has2_Object: 1
     m_Colors:
     - _FirstColorObject: {r: 0, g: 0, b: 0, a: 0}
-    - _SecondColorObject: {r: 49.075268, g: 0, b: 0, a: 0}
+    - _SecondColorObject: {r: 2.048752, g: 5.859482, b: 0, a: 0}
     - _ThirdColorObject: {r: 337.79395, g: 337.79395, b: 337.79395, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8090529720523018409

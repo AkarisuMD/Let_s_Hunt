@@ -13,7 +13,6 @@ public class MS_UseSkill : Monster_State
     {
         Debug.Log("Monster is Attacking");
         stateMachine.monster_Input.enabled = false;
-        stateMachine.monster_Animator.SetTrigger("isStun");
 
         await Task.Delay(stateMachine.timeOfTheAttackInMillisecond);
         SwitchState(factory.GetAnyState(MonsterState.Fight));
